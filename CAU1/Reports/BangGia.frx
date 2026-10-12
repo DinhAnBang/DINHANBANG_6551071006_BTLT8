@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report ScriptLanguage="CSharp" ReportInfo.Name="Bang gia tap hoa UTC2" ReportInfo.Author="UTC2" ReportInfo.Description="Bang gia tu DataTable HangHoa; tham so NgayIn">
+  <Dictionary>
+    <TableDataSource Name="HangHoa" ReferenceName="HangHoa" DataType="System.Int32" Enabled="true">
+      <Column Name="TenHang" DataType="System.String"/>
+      <Column Name="DonVi" DataType="System.String"/>
+      <Column Name="GiaBan" DataType="System.Decimal"/>
+    </TableDataSource>
+    <Parameter Name="NgayIn" DataType="System.String"/>
+  </Dictionary>
+  <ReportPage Name="Page1" PaperWidth="148" PaperHeight="210" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" Watermark.Font="Arial, 60pt">
+    <ReportTitleBand Name="ReportTitle1" Width="483.84" Height="69">
+      <TextObject Name="Title" Left="0" Top="4" Width="483.84" Height="36" Text="BẢNG GIÁ HÀNG HÓA – TẠP HÓA NHÀ TRƯỜNG UTC2" Font="Segoe UI, 12pt, style=Bold" HorzAlign="Center" VertAlign="Center" CanGrow="true"/>
+      <TextObject Name="PrintDate" Left="0" Top="42" Width="483.84" Height="22" Text="Ngày in: [NgayIn]" Font="Segoe UI, 9pt" HorzAlign="Center" VertAlign="Center"/>
+    </ReportTitleBand>
+    <PageHeaderBand Name="PageHeader1" Width="483.84" Height="29">
+      <TextObject Name="HeaderSTT" Width="42" Height="29" Text="STT" Fill.Color="Gainsboro" Border.Lines="All" Font="Segoe UI, 9pt, style=Bold" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="HeaderTen" Left="42" Width="241.84" Height="29" Text="Tên hàng" Fill.Color="Gainsboro" Border.Lines="All" Font="Segoe UI, 9pt, style=Bold" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="HeaderDonVi" Left="283.84" Width="77" Height="29" Text="Đơn vị" Fill.Color="Gainsboro" Border.Lines="All" Font="Segoe UI, 9pt, style=Bold" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="HeaderGia" Left="360.84" Width="123" Height="29" Text="Giá bán" Fill.Color="Gainsboro" Border.Lines="All" Font="Segoe UI, 9pt, style=Bold" HorzAlign="Center" VertAlign="Center"/>
+    </PageHeaderBand>
+    <DataBand Name="Data1" Width="483.84" Height="31" DataSource="HangHoa" CanGrow="true">
+      <TextObject Name="CellSTT" Width="42" Height="31" Text="[Row#]" Border.Lines="All" Font="Segoe UI, 9pt" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="CellTen" Left="42" Width="241.84" Height="31" Text="[HangHoa.TenHang]" Border.Lines="All" Font="Segoe UI, 9pt" VertAlign="Center" Padding="5, 0, 3, 0" CanGrow="true"/>
+      <TextObject Name="CellDonVi" Left="283.84" Width="77" Height="31" Text="[HangHoa.DonVi]" Border.Lines="All" Font="Segoe UI, 9pt" HorzAlign="Center" VertAlign="Center"/>
+      <TextObject Name="CellGia" Left="360.84" Width="123" Height="31" Text="[HangHoa.GiaBan]" Format="Number" Format.UseLocale="false" Format.DecimalDigits="0" Format.DecimalSeparator="," Format.GroupSeparator="." Border.Lines="All" Font="Segoe UI, 9pt" HorzAlign="Right" VertAlign="Center" Padding="2, 0, 6, 0"/>
+    </DataBand>
+    <PageFooterBand Name="PageFooter1" Width="483.84" Height="31">
+      <LineObject Name="FooterLine" Width="483.84" Border.Width="0.5"/>
+      <TextObject Name="FooterPage" Top="5" Width="483.84" Height="22" Text="Trang [Page#]/[TotalPages#]" Font="Segoe UI, 8pt" HorzAlign="Center" VertAlign="Center"/>
+    </PageFooterBand>
+  </ReportPage>
+</Report>

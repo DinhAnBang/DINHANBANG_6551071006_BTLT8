@@ -1,0 +1,35 @@
+# Visual Studio
+.vs/
+
+# Build output
+bin/
+obj/
+
+# User-specific Visual Studio files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Debug / Release folders
+Debug/
+Release/
+x64/
+x86/
+
+# NuGet packages cache
+packages/
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# OS files
+Thumbs.db
+Desktop.ini
+
+# Rider / JetBrains if opened by IntelliJ/Rider
+.idea/
+*.sln.iml
